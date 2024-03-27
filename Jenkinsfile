@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // right paramater is jenkins credintials
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                         app.push()
                         // signal the orchestrator that there is a new version
                     }
