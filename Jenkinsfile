@@ -20,9 +20,8 @@ pipeline {
         stage('Push image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                        app.push("dimitrijk/kiii-jenkins")
-                        app.push("$branchName-latest")
+                    docker.withRegistry('https://registry.hub.docker.com', 'dimitrijk') {
+                        app.push()
                         // signal the orchestrator that there is a new version
                     }
                 }
