@@ -20,8 +20,8 @@ pipeline {
         stage('Push image') {
             steps {
                 script {
-                    // right paramater is jenkins credintials
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+                    // right parameter is jenkins credentials
+                    docker.withRegistry('', 'dockerhub') {
                         app.push()
                         // signal the orchestrator that there is a new version
                     }
