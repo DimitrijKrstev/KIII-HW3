@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                        app.push("dimitrijk/kiii-jenkins$BUILD_NUMBER")
+                        app.push("dimitrijk/kiii-jenkins:$BUILD_NUMBER")
                         app.push("$branchName-latest")
                         // signal the orchestrator that there is a new version
                     }
