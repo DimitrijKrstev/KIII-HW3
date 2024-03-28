@@ -13,7 +13,7 @@ pipeline {
         stage('Build image') {
             steps {
                 script {
-                    def app = docker.build("dimitrijk/kiii-jenkins")
+                    app = docker.build("dimitrijk/kiii-jenkins")
                 }
             }
         }
@@ -21,6 +21,7 @@ pipeline {
             steps {
                 script {
                     // right parameter is jenkins credentials
+                    //
                     //
                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                        app.push("latest")  
