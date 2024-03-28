@@ -21,8 +21,8 @@ pipeline {
             steps {
                 script {
                     // right parameter is jenkins credentials
-                   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {            
-                       app.push("${env.BUILD_NUMBER}")            
+                    //
+                   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                        app.push("latest")  
                    }
                 }
